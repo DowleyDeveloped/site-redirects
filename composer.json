@@ -7,12 +7,12 @@
 			"dowleydeveloped\\siteredirects\\": "src/"
 		}
 	},
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"license": "MIT",
 	"authors": [
 		{
-			"name": "Forty Two studio",
-			"homepage": "https://fortytwo.studio"
+			"name": "Dowley Developed",
+			"homepage": "https://charlottedowley.co.uk"
 		}
 	],
 	"require": {
@@ -21,7 +21,9 @@
 	"extra": {
 		"name": "Site Redirects",
 		"handle": "site-redirects",
-		"class": "dowleydeveloped\\siteredirects\\SiteRedirects"
+		"class": "dowleydeveloped\\siteredirects\\SiteRedirects",
+		"developer": "Dowley Developed",
+		"developerUrl": "https://charlottedowley.co.uk"
 	},
 	"config": {
 		"allow-plugins": {

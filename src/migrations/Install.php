@@ -8,7 +8,7 @@ class Install extends Migration
 {
     public function safeUp(): bool
     {
-        $this->createTable('{{%fortytwo_redirects}}', [
+        $this->createTable('{{%dowleydeveloped_redirects}}', [
             'id' => $this->primaryKey(),
             'siteId' => $this->integer(),
             'oldPath' => $this->string()->notNull(),
@@ -24,14 +24,14 @@ class Install extends Migration
 
         $this->createIndex(
             null,
-            '{{%fortytwo_redirects}}',
+            '{{%dowleydeveloped_redirects}}',
             ['enabled', 'siteId', 'priority'],
             false
         );
 
         $this->createIndex(
             null,
-            '{{%fortytwo_redirects}}',
+            '{{%dowleydeveloped_redirects}}',
             ['oldPath', 'siteId'],
             false
         );
@@ -41,7 +41,7 @@ class Install extends Migration
 
     public function safeDown(): bool
     {
-        $this->dropTableIfExists('{{%fortytwo_redirects}}');
+        $this->dropTableIfExists('{{%dowleydeveloped_redirects}}');
         return true;
     }
 }

@@ -8,6 +8,6 @@ class RedirectRecord extends ActiveRecord
 {
     public static function tableName(): string
     {
-        return '{{%fortytwo_redirects}}';
+        return '{{%dowleydeveloped_redirects}}';
     }
 }
