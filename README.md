@@ -1,0 +1,25 @@
+# Site Redirects plugin for Craft CMS 5.x
+
+Creates the Ability to add redirects
+
+## Requirements
+
+This plugin requires Craft CMS 5+.
+
+## Installation
+
+To install the plugin, follow these instructions.
+
+1. Open your terminal and go to your Craft project:
+
+```
+cd /path/to/project/craft
+```
+
+2. Then tell Composer to load the plugin:
+
+```
+composer require dowleydeveloped/site-redirects
+```
+
+3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Site Redirects.

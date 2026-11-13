@@ -1,0 +1,48 @@
+{% extends "_layouts/cp" %}
+{% import "_includes/forms.twig" as forms %}
+
+{% set title = "Import Redirects" %}
+{% set selectedSubnavItem = "import" %}
+
+{% block content %}
+    <form method="post" enctype="multipart/form-data" accept-charset="UTF-8">
+        {{ csrfInput() }}
+        {{ actionInput('site-redirects/imports/upload') }}
+
+        {{ forms.fileField({
+            label: 'CSV File',
+            name: 'csvFile',
+            required: true
+        }) }}
+
+        {{ forms.checkboxField({
+            label: 'Dry run',
+            name: 'dryRun',
+            checked: false
+        }) }}
+
+        <button class="btn submit">Import</button>
+    </form>
+
+    <hr>
+
+    <p><strong>CSV headers:</strong> oldPath, targetUrl, statusCode, matchType, priority, enabled, siteId</p>
+
+    {% if results is defined %}
+        <h2>Results</h2>
+        <ul>
+            <li>Imported: {{ results.imported }}</li>
+            <li>Updated: {{ results.updated }}</li>
+            <li>Skipped: {{ results.skipped }}</li>
+        </ul>
+
+        {% if results.errors|length %}
+            <h3>Errors</h3>
+            <ul>
+                {% for error in results.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endif %}
+{% endblock %}

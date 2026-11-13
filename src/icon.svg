@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" width="600" height="600" version="1.1" viewBox="0 0 600 600">
+  <!-- Generator: Adobe Illustrator 30.2.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 1)  -->
+  <g id="Layer_11" data-name="Layer_1" display="none">
+    <rect width="600" height="600" rx="50" ry="50" fill="#ffabd0"/>
+    <polygon points="428.4 491.4 168.8 491.4 193.6 207.1 253.3 149.7 458.2 149.7 428.4 491.4" stroke="#000" stroke-linejoin="round" stroke-width="16"/>
+    <polygon points="396.6 460.1 140.9 460.1 165.2 182.8 245.8 108.6 427.4 108.6 396.6 460.1" fill="#fff" stroke="#090909" stroke-linejoin="round" stroke-width="16"/>
+    <polygon points="367.2 261.1 200.9 261.1 210.4 153.1 376.6 153.1 367.2 261.1" fill="#090909" stroke="#090909" stroke-linejoin="round" stroke-width="16"/>
+    <line x1="192.4" y1="358.4" x2="358.7" y2="358.4" fill="none" stroke="#090909" stroke-linecap="square" stroke-linejoin="round" stroke-width="16"/>
+    <line x1="188.7" y1="400.5" x2="274" y2="400.5" fill="none" stroke="#090909" stroke-linecap="square" stroke-linejoin="round" stroke-width="16"/>
+    <line x1="196.1" y1="316.3" x2="362.4" y2="316.3" fill="none" stroke="#090909" stroke-linecap="square" stroke-linejoin="round" stroke-width="16"/>
+    <polyline points="261.5 125.9 255 200.1 180.8 200.1" fill="#fff" stroke="#fff" stroke-linejoin="round" stroke-width="16"/>
+    <polyline points="245.8 108.6 239.4 182.8 165.2 182.8" fill="#090909" stroke="#090909" stroke-linejoin="round" stroke-width="16"/>
+  </g>
+  <g id="Layer_2">
+    <circle cx="299" cy="300" r="300" fill="#031c86" stroke="#000" stroke-miterlimit="10"/>
+    <path d="M365.71,170.85c5.43-5.43,14.24-5.43,19.67,0l69.55,69.55c5.43,5.43,5.43,14.24,0,19.67l-69.55,69.55c-5.43,5.43-14.24,5.43-19.67,0-5.43-5.43-5.43-14.24,0-19.67l45.8-45.8h-150.49l70.82,118.03c2.58,4.3,2.65,9.65.18,14.01-2.47,4.36-7.09,7.06-12.1,7.06h-153c-7.68,0-13.91-6.23-13.91-13.91s6.23-13.91,13.91-13.91h128.43l-70.82-118.03c-2.58-4.3-2.65-9.65-.18-14.01,2.47-4.36,7.09-7.06,12.1-7.06h175.06l-45.8-45.8c-5.43-5.43-5.43-14.24,0-19.67Z" fill="#fff" fill-rule="evenodd"/>
+  </g>
+</svg>

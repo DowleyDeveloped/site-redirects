@@ -1,0 +1,32 @@
+{
+	"name": "dowleydeveloped/site-redirects",
+	"description": "Add Redirects to your website",
+	"type": "craft-plugin",
+	"autoload": {
+		"psr-4": {
+			"dowleydeveloped\\siteredirects\\": "src/"
+		}
+	},
+	"version": "1.0.0",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Forty Two studio",
+			"homepage": "https://fortytwo.studio"
+		}
+	],
+	"require": {
+		"craftcms/cms": "^5.0"
+	},
+	"extra": {
+		"name": "Site Redirects",
+		"handle": "site-redirects",
+		"class": "dowleydeveloped\\siteredirects\\SiteRedirects"
+	},
+	"config": {
+		"allow-plugins": {
+			"yiisoft/yii2-composer": true,
+			"craftcms/plugin-installer": true
+		}
+	}
+}

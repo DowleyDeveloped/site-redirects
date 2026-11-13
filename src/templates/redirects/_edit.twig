@@ -1,0 +1,112 @@
+{% extends "_layouts/cp" %}
+{% import "_includes/forms.twig" as forms %}
+
+{% set isNew = not redirect.id %}
+{% set title = isNew ? 'New Redirect' : 'Edit Redirect' %}
+{% set selectedSubnavItem = "redirects" %}
+
+{% block content %}
+    <form method="post" accept-charset="UTF-8" id="redirect-form">
+        {{ csrfInput() }}
+        {{ actionInput('site-redirects/redirects/save') }}
+        {{ redirectInput('site-redirects/' ~ (redirect.id ?? 'new')) }}
+
+        {% if redirect.id %}
+            {{ hiddenInput('id', redirect.id) }}
+        {% endif %}
+
+        {{ forms.selectField({
+            label: 'Site',
+            name: 'siteId',
+            value: redirect.siteId,
+            options: [{ label: 'All Sites', value: '' }]|merge(
+                sites|map(site => {
+                    label: site.name,
+                    value: site.id
+                })
+            )
+        }) }}
+
+        {{ forms.textField({
+            label: 'Old Path',
+            name: 'oldPath',
+            value: redirect.oldPath,
+            required: true,
+            instructions: 'Examples: about-us, blog/*, ^old-section/(.*)$'
+        }) }}
+
+        {{ forms.textField({
+            label: 'Target URL',
+            name: 'targetUrl',
+            value: redirect.targetUrl,
+            required: true
+        }) }}
+
+        {{ forms.selectField({
+            label: 'Match Type',
+            name: 'matchType',
+            value: redirect.matchType,
+            options: [
+                { label: 'Exact', value: 'exact' },
+                { label: 'Wildcard', value: 'wildcard' },
+                { label: 'Regex', value: 'regex' }
+            ]
+        }) }}
+
+        {{ forms.selectField({
+            label: 'Status Code',
+            name: 'statusCode',
+            value: redirect.statusCode,
+            options: [
+                { label: '301', value: 301 },
+                { label: '302', value: 302 }
+            ]
+        }) }}
+
+        {{ forms.textField({
+            label: 'Priority',
+            name: 'priority',
+            value: redirect.priority,
+            type: 'number',
+            instructions: 'Higher numbers win first.'
+        }) }}
+
+        {{ forms.lightswitchField({
+            label: 'Enabled',
+            name: 'enabled',
+            on: redirect.enabled
+        }) }}
+
+        <div class="buttons">
+            <button type="submit" class="btn submit">Save Redirect</button>
+        </div>
+    </form>
+{% endblock %}
+
+{% js %}
+(() => {
+    const form = document.getElementById('redirect-form');
+
+    if (!form) {
+        return;
+    }
+
+    document.addEventListener('keydown', function(event) {
+        const isSaveShortcut = (event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 's';
+
+        if (!isSaveShortcut) {
+            return;
+        }
+
+        event.preventDefault();
+
+        const submitButton = form.querySelector('button[type="submit"], input[type="submit"]');
+
+        if (submitButton) {
+            submitButton.click();
+        } else {
+            form.submit();
+        }
+    });
+})();
+{% endjs %}
